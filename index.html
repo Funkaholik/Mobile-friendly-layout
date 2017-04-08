@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Adaptive layout | With flex</title>
+	<link rel="shortcut icon" href="Funkaholik.png" type="image/png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="media-queries.css">
+</head>
+<body>
+
+<div class="menu-mobile">
+	<button id="trigger" class="menu__trigger show">&#x22EF;&#xFE0E;</button>
+</div>
+
+<nav id="nav" class="navigation toggle">
+	<div class="language">
+		<a class="en" href="#">En</a>
+		<a class="ru" href="#">Ru</a>
+	</div>
+	<ul class="menu">
+		<li class="menu__holder"><a class="menu__holder__link scroll active" href="#one">One</a></li>
+		<li class="menu__holder"><a class="menu__holder__link scroll" href="#two">Two</a></li>
+		<li class="menu__holder"><a class="menu__holder__link scroll" href="#three">Three</a></li>
+		<li class="menu__holder"><a class="menu__holder__link scroll" href="#four">Four</a></li>
+		<li class="menu__holder"><a class="menu__holder__link scroll" href="#five">Five</a></li>
+	</ul>
+</nav>
+
+<main class="main-wrapper">
+	<section id="one" class="frames">
+		<div class="frames__wrapper">
+			<span class="frames__wrapper__big-text">Yooo .. i'm adaptive!</span>
+			<span class="frames__wrapper__big-text">And mobile friendly.</span>
+			<span class="frames__wrapper__big-text">But with flex, sorry IE9..(</span>
+		</div>
+		<span class="fading"></span>
+	</section>
+
+	<section id="two" class="frames">
+		<div class="frames__wrapper">
+			<p class="frames__wrapper__text fading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore perspiciatis nam autem nisi maiores at, in repellat ipsum, sequi rerum perferendis sunt adipisci voluptas saepe eius maxime voluptate accusantium cupiditate.</p>
+		</div>
+	</section>
+
+	<section id="three" class="frames">
+		<div class="frames__wrapper">
+			<!-- <span class="fading"></span> -->
+			<div class="frames__wrapper__skill-holder fading">
+				<span class="frames__wrapper__text-fx">Some text here ...</span>
+				<span class="frames__wrapper__text-fx">Some text here ...</span>
+				<span class="frames__wrapper__text-fx">Some text here ...</span>
+				<span class="frames__wrapper__text-fx">Some text here ...</span>
+				<span class="frames__wrapper__text-fx">Some text here ...</span>
+				<span class="frames__wrapper__text-fx">Some text here ...</span>
+			</div>
+		</div>
+	</section>
+
+	<section id="four" class="frames">
+		<div class="frames__wrapper">
+			<p class="frames__wrapper__text fading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde laudantium minima, voluptatibus eos odit fugit? Suscipit quo, perspiciatis voluptatem, non omnis blanditiis voluptas porro aperiam soluta, ipsa numquam mollitia aspernatur.</p>
+		</div>
+	</section>
+
+	<section id="five" class="frames">
+		<div class="frames__wrapper">
+			<div class="frames__wrapper__icons fading">
+				<a class="frames__wrapper__icons__links" href="tel:+79500460287">&#xf095;</a>
+				<a class="frames__wrapper__icons__links" href="mailto:funkaholik@mail.ru">&#xf003;</a>
+			</div>
+		</div>
+	</section>
+</main>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
