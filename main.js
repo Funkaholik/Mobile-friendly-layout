@@ -1,15 +1,14 @@
 $(function() {
 
-  var anchors = ['one','two','three','four','five'],
-  target = $('.fading'),
-  zenith, nadir, location, pilot,
+  var target = $('.fading'), guide = $('#nav'),
+  zenith, nadir, spot, pilot,
   modern = window.requestAnimationFrame;
 
   storeDimensions();
 
   $(window).resize(storeDimensions).scroll(function() {
 
-    location = $(this).scrollTop();
+    spot = $(this).scrollTop();
 
     if (!pilot) {
     if (modern) requestAnimationFrame(checkFade);
@@ -25,14 +24,21 @@ $(function() {
     $('.active').removeClass('active');
     $(this).addClass('active');
 
-    var destination = $(this.hash).offset().top,
-    goal = $(this.hash).find('.fading');
+    var item = this.hash,
+    destination = $(item).offset().top,
+    goal = $(item).find('.fading');
 
-    if (destination != location && goal.length) goal.stop().fadeOut();
+    if (destination != spot && goal.length) goal.stop().fadeOut();
 
     $('html, body').animate({scrollTop: destination}, 500, function() {
 
-      if (goal.length) goal.fadeTo(250,1);
+      if (!guide.hasClass('toggle')) guide.addClass('toggle').removeClass('show');
+
+      if (goal.length) {
+        goal.fadeTo(250, 1, function() {
+        });
+      }
+
       pilot = false;
     });
   });
@@ -55,91 +61,20 @@ function checkFade() {
   target.each(function(i) {
 
     if (!$(this).is(':animated')) {
-    if (location > zenith[i] && location < nadir[i]) {
+    if (spot > zenith[i] && spot < nadir[i]) {
       $(this).fadeTo(250,1);
       var pair = $(this).closest('section')[0].id;
       $('.active').removeClass('active');
       $('[href*="' + pair + '"]').addClass('active');
     }
-    else if ($(this).css('opacity') != 0) $(this).fadeTo(0,0);
+    else if ($(this).css('opacity') !== 0) $(this).fadeTo(0,0);
     }
   });
 }
-});
 
 // mobile menu button
-(function() {
-  $('#trigger').click(function() {
-    if ($('#nav').hasClass('toggle')) {
-      $('#nav').removeClass('toggle');
-      $('#nav').addClass('show');
-    } else {
-      $('#nav').addClass('toggle');
-      $('#nav').removeClass('show');
-    }
-  });
-})();
-
-/*(function() {
-  $('#one').click(function() {
-    if ($('#nav').hasClass('show')) {
-      $('#nav').removeClass('show');
-      $('#nav').addClass('toggle');
-    } else {
-      $('#nav').addClass('show');
-      $('#nav').removeClass('toggle');
-    }
-  });
-})();*/
-
-/*$( "#one" ).click(function() {
-  $( "#nav" ).hide( "slow", function() {
-    // Animation complete.
-  });
-  */
-
-/*$(document).ready(function(){
-    $("#one").click(function(){
-        $("#nav").hide(1000);
-    });
-});*/
-
-/*$(document).ready(function(){
-    $("#one").click(function(){
-        $("#nav").toggle();
-    });
-});*/
-
-// mobile menu button -- vers
-/*(function() {
-  $('#trigger').click(function() {
-    if ($('#nav').hasClass('navigation')) {
-      $('#nav').addClass('show');
-    } else {
-      $('#nav').removeClass('show');
-    }
-  });
-})();*/
-
-// mobile menu button -- vers
-/*(function() {
-  $('#one').click(function() {
-    if ($('#nav').hasClass('show')) {
-      $('#nav').addClass('hide');
-    } else {
-      $('#nav').removeClass('hide');
-    }
-  });
-})();*/
-
-/*(function() {
-  $('#one').click(function() {
-    if ($('#nav').hasClass('show')) {
-      $('#nav').removeClass('show');
-      $('#nav').addClass('toggle');
-    } else {
-      $('#nav').addClass('show');
-      $('#nav').removeClass('toggle');
-    }
-  });
-})();*/
+$('#trigger').click(function() {
+  if (guide.hasClass('toggle')) guide.removeClass('toggle').addClass('show');
+  else guide.addClass('toggle').removeClass('show');
+});
+});
