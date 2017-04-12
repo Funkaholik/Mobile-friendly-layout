@@ -4,7 +4,7 @@
   }
   .frames__wrapper__big-text {
     /*font-size: 60px;*/
-    /*width: 90%;*/
+    width: 90%;
   }
 }
 
@@ -12,18 +12,14 @@
   .frames__wrapper {
     /*padding: 0;*/
   }
-  .frames__wrapper__logo {
-    font-size: 125px;
-  }
   .frames__wrapper__big-text {
-    font-size: 50px;
-    /*-webkit-text-stroke-width: 1px;*/
-    /*margin-bottom: 1%;*/
+    font-size: 56px;
+    -webkit-text-stroke-width: 1px;
+    margin-bottom: 1%;
   }
   .frames__wrapper__text {
-    font-size: 26px;
+    font-size: 18px;
     padding: 5% 10%;
-    /*text-align: left; */
   }
   .menu {
     margin-right: 7%;
@@ -36,16 +32,6 @@
   }
 }
 
-@media only screen and (max-width: 499px) {
-  .columns {
-    /*margin-top: 100px;*/
-  }
-  .wrapper {
-    border: 1px solid black;
-    box-sizing: border-box;
-  }
-}
-
 @media only screen and (max-width: 769px) and (max-height: 451px) and (orientation: landscape) {
   .frames__wrapper {
     padding: 0 5%;
@@ -55,10 +41,6 @@
   }
   .frames__wrapper__text {
     font-size: 18px;
-    padding: 5%;
-  }
-  .frames__wrapper__text__info {
-    font-size: 25px;
     padding: 5%;
   }
   .menu-mobile {
@@ -106,53 +88,13 @@
 
 
 @media only screen and (max-width: 499px) and (max-height: 751px) and (orientation: portrait) {
-  .frames {
-    margin-bottom: 250px;
-  }
-  .frames:last-of-type {
-    margin-bottom: 0;
-  }      
-
-  .frames__wrapper__logo {
-    font-size: 250px;
-  }
   .frames__wrapper__big-text {
     /*font-size: 56px;*/
     /*-webkit-text-stroke-width: 1px;*/
-    /*margin-bottom: 5%;*/
-    padding: 0;
-    font-size: 30px;
-    -webkit-text-stroke-width: 1.5px;
-  }
-  .desktop {
-    display: none;
-    visibility: hidden;
-  }
-  .mobile {
-    display: flex;
-    visibility: visible;
-  }
-  .columns-wrapper {  
-    width: 100%;
-    /*padding: 0 10%;*/
-    margin-top: 60%;
-    /*padding-top: 25%;*/
-
-    flex-direction: column;
-    /*align-items: flex-start;*/
-    /*align-items: center;*/
-  }
-  .columns {
-    /*border: 1px solid red;*/
-    width: 100%;
-    min-height: 350px;
+    margin-bottom: 5%;
   }
   .frames__wrapper__text {
-    font-size: 30px;
-    padding: 5%;
-  }
-  .frames__wrapper__text__info {
-    font-size: 25px;
+    font-size: 18px;
     padding: 5%;
   }
   .menu-mobile {
@@ -202,7 +144,5 @@
 }
 
 @media only screen and (max-width: 321px) {
-  .frames__wrapper__big-text {
-    font-size: 28px;
-  }
+
 }
